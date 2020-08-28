@@ -109,19 +109,21 @@ if __name__ == '__main__':
 
 
     # Display first five rows of X:
-    print('\n'*2, "*** First five rows of X ***", X[:10], '\n')
-
-    # print([round(j,4) for i in i in X[:10]])
-    print([i for i in X[:10]])
+    print('\n'*2, "*** First five rows of X ***")
+    print(X[:5])
+    print()
 
     # Create new KMeans object
     kmeans = KMeans(3)
 
     # Fit the model: assigns each point in X to a cluster
     kmeans.fit(X)
-    print("*** Centroids ***",kmeans.print_centroids(),'\n')
+    print("*** Centroids ***")
+    print(kmeans.print_centroids())
+    print()
 
-    print("*** Clusters ***", kmeans.labels_, '\n')
+    print("*** Clusters ***", kmeans.labels_)
+    print()
     
     sample = [[6,9],[6,11]]
     print(f"*** Prediction for {sample} *** \n", kmeans.predict([[6,9],[6,11]]),'\n')
